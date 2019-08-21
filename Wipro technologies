@@ -1,0 +1,30 @@
+String[] s={input1,input2};
+        String[] front=new String[3];
+        String[] middle=new String[3];
+        String[] end=new String[3];
+        String ans;
+    
+        int l;
+        for(int i=0;i<2;i++)
+        {
+            l=s[i].length();
+            if(l%3==2)
+            {
+                front[i]=s[i].substring(0,(l/3)+1);
+                middle[i]=s[i].substring((l/3)+1,2*(l/3)+1);
+                end[i]=s[i].substring(2*(l/3)+1);
+            }
+            else if(l%3==1)
+            {
+                front[i]=s[i].substring(0,(l/3));
+                middle[i]=s[i].substring((l/3),2*(l/3)+1);
+                end[i]=s[i].substring(2*(l/3)+1);
+            }
+            else
+            {
+                front[i]=s[i].substring(0,(l/3));
+                middle[i]=s[i].substring((l/3),2*(l/3));
+                end[i]=s[i].substring(2*(l/3));
+            }
+            ans=front[1]+front[0]+end[2];( Based on question check ) only this line 
+        }
