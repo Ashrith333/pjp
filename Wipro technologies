@@ -26,5 +26,5 @@ String[] s={input1,input2};
                 middle[i]=s[i].substring((l/3),2*(l/3));
                 end[i]=s[i].substring(2*(l/3));
             }
-            ans=front[1]+front[0]+end[2];( Based on question check ) only this line 
+            ans=front[1]+front[0]+end[2];( Based on question check ) only this line in front array alll words front part middle one middle part . if word 1 then front[0]
         }
