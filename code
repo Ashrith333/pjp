@@ -1,3 +1,649 @@
+char[] c=input1.toCharArray();
+  int[] x=new int[10];
+  List<Integer> ls=new ArrayList<Integer>();
+  int count =0;
+  for(int i=0;i<c.length;i++)
+  {
+   x[i]=Character.getNumericValue(c[i]);
+  }
+  int sum=0;
+  
+  for(int i=0;i<x.length;i++)
+  {
+  if(x[0]%2==1 && (sum%2==1 || sum==0))
+  {
+              sum=sum+x[i];
+     count++;
+
+  }
+  
+  else if(x[0]%2==0 && (sum%2==0 ||sum==0 ))
+  {
+          sum=sum+x[i];
+    count++;
+  }
+  
+  else
+  {
+   
+   x[0]=x[count];
+   count++;
+   System.out.println("s1="+sum+"i="+i+"c="+count+"length"+x.length);
+   ls.add(sum);
+   sum=x[0];
+   if(i==(x.length)-2)
+   {
+    sum=x[i]+x[i+1];
+    ls.add(sum);
+    System.out.println("s2"+sum);
+    break;
+
+   }
+   else if(i==x.length-1)
+   {
+    sum=x[i];
+    ls.add(sum);
+    System.out.println("s3"+sum);
+    break;
+   }
+REDUCED SUBTRACTION 
+
+import java.io.*;
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+      int in=7896789;
+      int d=0;
+      String w="";
+      while(in>9){
+          String s=""+in;
+          int l=s.length();
+      for(int i=0;i<l-1;i++)
+      {
+         d=(int)Math.abs((int)s.charAt(i)-(int)s.charAt(i+1));
+        w=w+d;
+      }
+       in=Integer.parseInt(w);
+       w="";
+    }
+   System.out.println(in);
+    }
+}
+
+MIN MINUS MAX PRODUCT
+   public static void main(String []args){
+        int[] x={1,5,9,6};
+        int l=x.length;
+        int[] y=new int[l];
+        int min=x[0];
+        int max=x[0];
+        
+        for(int i=0;i<l;i++)
+        {
+            if(x[i]>max)
+            {
+               
+                max=x[i];
+            }
+            if(x[i]<min)
+            {
+                min=x[i];
+            }
+     }
+        System.out.println(min);
+        System.out.println(max);
+        
+        for(int i=0;i<l;i++)
+        {
+            y[i]=(x[i]-min)*max;
+            System.out.println(y[i]);
+        }
+        
+        
+        
+     }
+}
+
+
+LONGEST POSITIVE SEQUENCE
+ int[] x={-12,-16,12,18,18,14,-4,12,13,15,-5,22,56,-61};
+       int l=x.length;
+       int max=0;
+       int c=0;
+       int f=0;
+       int ans=0;
+       for(int i=0;i<l;i++)
+       {
+           if(x[i]>=0)
+           {
+               c++;
+           }
+           
+           
+          else
+           {
+               c=0;
+               f++;
+                
+           }
+           
+           if(c>max)
+           {
+               max=c;
+              
+           }
+           
+          }
+           
+       if(f==l)
+       {
+           ans=-1;
+       }
+       else
+       {
+           ans=max;
+       }
+       System.out.println(ans);
+     
+ }
+}
+
+LONGEST ODD SEQUENCE:
+  int[] x={2,4,6,8,10,12,14};
+       int l=x.length;
+       int max=0;
+       int c=0;
+       int f=0;
+       int ans=0;
+       for(int i=0;i<l;i++)
+       {
+           if(x[i]%2==1)
+           {
+               c++;
+           }
+           
+           
+          else
+           {
+               c=0;
+               f++;
+                
+           }
+           
+           if(c>max)
+           {
+               max=c;
+              
+           }
+           
+          }
+           
+       if(f==l)
+       {
+           ans=-1;
+       }
+       else
+       {
+           ans=max;
+       }
+       System.out.println(ans);
+     
+ }
+
+
+ }
+
+
+PROCESS TWO WORDS::
+
+ public static void main(String[] args) {
+  String in="Today is a Nice day";
+    int in1=41;
+    String[] s=in.split(" ");
+    int x=(in1/10)-1;
+    int y=(in1%10)-1;
+    int l1=s[x].length();
+    int l2=s[y].length();
+   
+     String s1=s[x].substring(0,l1/2);
+     String s2 =s[x].substring(l1/2,l1);
+      StringBuffer sb =new StringBuffer(s1);
+      String s4=sb.reverse().toString();
+     String s3=""+s2+s4;
+     System.out.println(s3);
+     
+     
+      String x1=s[y].substring(0,l2/2+1);
+     String x2 =s[y].substring((l2)/2,l2);
+      StringBuffer sb1 =new StringBuffer(x1);
+     
+    String x4=sb1.reverse().toString();
+     String x3=""+x2+x4;
+    
+  System.out.println(x3);
+  String ans = ""+s3+" "+x3;
+  System.out.println(ans);
+ }
+
+SUM OF POWERS OF dIGITS
+ int in=582467;
+  String s=String.valueOf(in);
+                               int sum=0;
+  int l=s.length();
+  int[] x=new int[l];
+  for(int i=0;i<l;i++)
+  {
+     x[i]=Character.getNumericValue(s.charAt(i));
+  }
+  for(int i=0;i<x.length-1;i++)
+  {
+      sum=sum+(int)Math.pow(x[i],x[i+1]);
+      if(i+1==l-1)
+      {
+          sum=sum+1;
+      }
+  }
+  
+  System.out.println(sum);
+SUMMEET SUM::
+ 
+int[] x={23792,37221,10270,73391};
+   int num=0;
+   int sum=0;
+   for(int i=0;i<x.length;i++)
+   {
+       num=x[i];
+       String s=String.valueOf(num);
+       int[] y=new int[s.length()];
+       for(int j=0; j<s.length();j++)
+       {
+           y[j]=Character.getNumericValue(s.charAt(j));
+           
+       }
+       
+       Arrays.sort(y);
+       int min1=y[0];
+       int min2=y[1];
+                      int a=min1*10+min2;
+         sum=sum+a;
+         
+        System.out.println(sum);   
+       }
+   }
+
+FILER:FINDER:FIXER:;
+
+
+String[] s=input2.toUpperCase().split(":");
+  int a=input1.indexOf('_');
+  String s1="";
+          char c; 
+   
+    int f=0;
+     for(int i=0;i<s.length;i++)
+     {  
+
+      //String m=s[i];
+              c=s[i].charAt(a);
+     String s2=input1.toUpperCase().replace('_', c);
+    System.out.println("s2"+s2);
+     if(s2.equalsIgnoreCase(s[i]))
+     {
+                    s1=s1+s[i]+":";
+           System.out.println("s1"+s1);
+     f++;
+     
+     }
+   
+     
+     }
+     int l=s1.length();
+      String ans="";
+    if(f>=1)
+    {
+                   ans= s1.substring(0,l-1);
+    }
+    if(f==0)
+    {
+
+
+
+
+
+     ans ="ERROR-009";
+    }
+               
+      
+      return ans;
+}
+
+char[] c=input1.toCharArray();
+  int[] x=new int[10];
+  List<Integer> ls=new ArrayList<Integer>();
+  int count =0;
+  for(int i=0;i<c.length;i++)
+  {
+   x[i]=Character.getNumericValue(c[i]);
+  }
+  int sum=0;
+  
+  for(int i=0;i<x.length;i++)
+  {
+  if(x[0]%2==1 && (sum%2==1 || sum==0))
+  {
+              sum=sum+x[i];
+     count++;
+
+  }
+  
+  else if(x[0]%2==0 && (sum%2==0 ||sum==0 ))
+  {
+          sum=sum+x[i];
+    count++;
+  }
+  
+  else
+  {
+   
+   x[0]=x[count];
+   count++;
+   System.out.println("s1="+sum+"i="+i+"c="+count+"length"+x.length);
+   ls.add(sum);
+   sum=x[0];
+   if(i==(x.length)-2)
+   {
+    sum=x[i]+x[i+1];
+    ls.add(sum);
+    System.out.println("s2"+sum);
+    break;
+
+   }
+   else if(i==x.length-1)
+   {
+    sum=x[i];
+    ls.add(sum);
+    System.out.println("s3"+sum);
+    break;
+   }
+
+REDUCED SUBTRACTION 
+
+import java.io.*;
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+      int in=7896789;
+      int d=0;
+      String w="";
+      while(in>9){
+          String s=""+in;
+          int l=s.length();
+      for(int i=0;i<l-1;i++)
+      {
+         d=(int)Math.abs((int)s.charAt(i)-(int)s.charAt(i+1));
+        w=w+d;
+      }
+       in=Integer.parseInt(w);
+       w="";
+    }
+   System.out.println(in);
+    }
+}
+
+MIN MINUS MAX PRODUCT
+   public static void main(String []args){
+        int[] x={1,5,9,6};
+        int l=x.length;
+        int[] y=new int[l];
+        int min=x[0];
+        int max=x[0];
+        
+        for(int i=0;i<l;i++)
+        {
+            if(x[i]>max)
+            {
+               
+                max=x[i];
+            }
+            if(x[i]<min)
+            {
+                min=x[i];
+            }
+     }
+        System.out.println(min);
+        System.out.println(max);
+        
+        for(int i=0;i<l;i++)
+        {
+            y[i]=(x[i]-min)*max;
+            System.out.println(y[i]);
+        }
+        
+        
+        
+     }
+}
+
+
+LONGEST POSITIVE SEQUENCE
+ int[] x={-12,-16,12,18,18,14,-4,12,13,15,-5,22,56,-61};
+       int l=x.length;
+       int max=0;
+       int c=0;
+       int f=0;
+       int ans=0;
+       for(int i=0;i<l;i++)
+       {
+           if(x[i]>=0)
+           {
+               c++;
+           }
+           
+           
+          else
+           {
+               c=0;
+               f++;
+                
+           }
+           
+           if(c>max)
+           {
+               max=c;
+              
+           }
+           
+          }
+           
+       if(f==l)
+       {
+           ans=-1;
+       }
+       else
+       {
+           ans=max;
+       }
+       System.out.println(ans);
+     
+ }
+}
+
+LONGEST ODD SEQUENCE:
+  int[] x={2,4,6,8,10,12,14};
+       int l=x.length;
+       int max=0;
+       int c=0;
+       int f=0;
+       int ans=0;
+       for(int i=0;i<l;i++)
+       {
+           if(x[i]%2==1)
+           {
+               c++;
+           }
+           
+           
+          else
+           {
+               c=0;
+               f++;
+                
+           }
+           
+           if(c>max)
+           {
+               max=c;
+              
+           }
+           
+          }
+           
+       if(f==l)
+       {
+           ans=-1;
+       }
+       else
+       {
+           ans=max;
+       }
+       System.out.println(ans);
+     
+ }
+
+
+ }
+
+
+PROCESS TWO WORDS::
+
+ public static void main(String[] args) {
+  String in="Today is a Nice day";
+    int in1=41;
+    String[] s=in.split(" ");
+    int x=(in1/10)-1;
+    int y=(in1%10)-1;
+    int l1=s[x].length();
+    int l2=s[y].length();
+   
+     String s1=s[x].substring(0,l1/2);
+     String s2 =s[x].substring(l1/2,l1);
+      StringBuffer sb =new StringBuffer(s1);
+      String s4=sb.reverse().toString();
+     String s3=""+s2+s4;
+     System.out.println(s3);
+     
+     
+      String x1=s[y].substring(0,l2/2+1);
+     String x2 =s[y].substring((l2)/2,l2);
+      StringBuffer sb1 =new StringBuffer(x1);
+     
+    String x4=sb1.reverse().toString();
+     String x3=""+x2+x4;
+    
+  System.out.println(x3);
+  String ans = ""+s3+" "+x3;
+  System.out.println(ans);
+ }
+
+SUM OF POWERS OF dIGITS
+ int in=582467;
+  String s=String.valueOf(in);
+                               int sum=0;
+  int l=s.length();
+  int[] x=new int[l];
+  for(int i=0;i<l;i++)
+  {
+     x[i]=Character.getNumericValue(s.charAt(i));
+  }
+  for(int i=0;i<x.length-1;i++)
+  {
+      sum=sum+(int)Math.pow(x[i],x[i+1]);
+      if(i+1==l-1)
+      {
+          sum=sum+1;
+      }
+  }
+  
+  System.out.println(sum);
+SUMMEET SUM::
+ 
+int[] x={23792,37221,10270,73391};
+   int num=0;
+   int sum=0;
+   for(int i=0;i<x.length;i++)
+   {
+       num=x[i];
+       String s=String.valueOf(num);
+       int[] y=new int[s.length()];
+       for(int j=0; j<s.length();j++)
+       {
+           y[j]=Character.getNumericValue(s.charAt(j));
+           
+       }
+       
+       Arrays.sort(y);
+       int min1=y[0];
+       int min2=y[1];
+                      int a=min1*10+min2;
+         sum=sum+a;
+         
+        System.out.println(sum);   
+       }
+   }
+
+FILER:FINDER:FIXER:;
+
+
+String[] s=input2.toUpperCase().split(":");
+  int a=input1.indexOf('_');
+  String s1="";
+          char c; 
+   
+    int f=0;
+     for(int i=0;i<s.length;i++)
+     {  
+
+      //String m=s[i];
+              c=s[i].charAt(a);
+     String s2=input1.toUpperCase().replace('_', c);
+    System.out.println("s2"+s2);
+     if(s2.equalsIgnoreCase(s[i]))
+     {
+                    s1=s1+s[i]+":";
+           System.out.println("s1"+s1);
+     f++;
+     
+     }
+   
+     
+     }
+     int l=s1.length();
+      String ans="";
+    if(f>=1)
+    {
+                   ans= s1.substring(0,l-1);
+    }
+    if(f==0)
+    {
+
+
+
+
+
+     ans ="ERROR-009";
+    }
+               
+      
+      return ans;
+}
+
+Get Outlook for iOS
+
+
+
+
+
+
 *#*#*#*#*#*
 public class Main
 {
